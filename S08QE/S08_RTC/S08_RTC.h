@@ -24,7 +24,7 @@ typedef enum{
 	/** Timer por defecto, Se puede modificar su nombre sin problema*/
 	eTimer_ch0=0,
 	// Añade tus timers personalizados de aqui en adelante
-
+	
 	/** Último canal definido. No modificar directamente. */
 	eTimer_last,
 	/** Número total de canales definidos. */

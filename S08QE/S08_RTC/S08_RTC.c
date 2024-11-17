@@ -184,7 +184,7 @@ uint8_t rtc_get_count(void)
 */
 void timer_setCount(eTimerMs_Channel IDChannel, uint16_t u16countValue)
 {
-	counterRTC.counterTimerU16[IDChannel] = u16countValue;
+	counterRTC.u16counterTimer[IDChannel] = u16countValue;
 }
 
 /*
@@ -197,7 +197,7 @@ void timer_setCount(eTimerMs_Channel IDChannel, uint16_t u16countValue)
 */
 uint16_t timer_getCount(eTimerMs_Channel IDChannel)
 {
-	return counterRTC.counterTimerU16[IDChannel];
+	return counterRTC.u16counterTimer[IDChannel];
 }
 
 /*
@@ -214,7 +214,7 @@ uint16_t timer_getCount(eTimerMs_Channel IDChannel)
 */
 interrupt 24 void RTC_IRQ(void)
 {
-	uint8_t u8Timer_index; = eTimer_count;
+	uint8_t u8Timer_index = eTimer_count;
 	DisableInterrupts;
 	do
 	{
