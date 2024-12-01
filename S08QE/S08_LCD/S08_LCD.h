@@ -8,11 +8,9 @@
 #ifndef S08_LCD_H_
 #define S08_LCD_H_
 
+#include "S08_Board.h"
+#include "S08QE/S08_RTC/S08_RTC.h"
 
-#include <hidef.h>
-#include "derivative.h"
-#include "../S08_RTC/S08_RTC.h"
-#include "../../S08_common/S08_variables.h"
 
 // Definición de pines LCD
 #define DATA_PORT PTBD 			// Asignación de puerto de datos D0..D7 a PTB0..PTB7
