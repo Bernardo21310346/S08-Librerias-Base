@@ -1,10 +1,12 @@
 /*
- * moonbyte_s08_lcd_port.c
- *
- *  Created on: Sep 14, 2024
- *      Author: Bernardo Iñiguez
- */
-#include "moonbyte_s08_lcd_port.h"
+	@file 	S08_LCD.c
+	@brief	Funciones para el manejo de LCD
+	@author	Bernardo Iniguez 
+	@date	30/11/24
+
+	Este archivo contiene las funciones para el manejo del purto LCD de la tarjeta de prueba MoonByte S08
+*/
+#include "S08_LCD.h"
 
 const uint8_t u8LCD_initValues[6] = {0x38,0x38,0x38,0x0F,0x06,0x01};
 
@@ -248,51 +250,3 @@ uint8_t lcd_getCGRAM_dir(uint8_t caracter)
 		return LCD_CGRAM_CH8_HOME;
 	}
 }
-
-/*
-void lcd_set_cgram_dir(uint8_t addr)
-{
-	lcd_set_comand(addr);
-}
-
-void lcd_make_character(uint8_t character, uint8_t row, uint8_t data)
-{
-	uint8_t cgram_dir = 0x00;
-	if(character == 1)
-	{
-		cgram_dir = LCD_CGRAM_CH1_HOME | row;
-		lcd_set_comand(cgram_dir);
-		lcd_send_data(data);
-	}
-	if(character == 2)
-	{
-		cgram_dir = LCD_CGRAM_CH2_HOME | row;
-	}
-	if(character == 3)
-	{
-		cgram_dir = LCD_CGRAM_CH3_HOME | row;
-	}
-	if(character == 4)
-	{
-		cgram_dir = LCD_CGRAM_CH4_HOME | row;
-	}
-	if(character == 5)
-	{
-		cgram_dir = LCD_CGRAM_CH5_HOME | row;
-	}
-	if(character == 6)
-	{
-		cgram_dir = LCD_CGRAM_CH6_HOME | row;
-	}
-	if(character == 7)
-	{
-		cgram_dir = LCD_CGRAM_CH7_HOME | row;
-	}
-	if(character == 8)
-	{
-		cgram_dir = LCD_CGRAM_CH8_HOME | row;
-	}
-	lcd_set_comand(cgram_dir);
-	lcd_send_data(data);
-}
-*/

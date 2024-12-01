@@ -1,5 +1,5 @@
-#ifndef _VARIABLES_H
-#define _VARIABLES_H
+#ifndef _S08_VARIABLES_H
+#define _S08_VARIABLES_H
 
 /*
 	@enum	bool

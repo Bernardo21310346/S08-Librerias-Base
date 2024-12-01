@@ -9,7 +9,7 @@
 
 #include <hidef.h>
 #include "derivative.h"
-#include "variables.h"
+#include "../../S08_common/S08_variables.h"
 
 #define rtc_get_flag() RTCSC_RTIF //Bandera de RTC
 
@@ -53,7 +53,7 @@ void rtc_enableInterupt(void);
 void rtc_reset(void);
 
 void rtc_atMs(void);
-void interrupt 24 RTC_IRQ(void);
+interrupt 24 void RTC_IRQ(void);
 void timer_setCount(eTimerMs_Channel IDChannel, uint16_t u16countValue);
 uint16_t timer_getCount(eTimerMs_Channel IDChannel);
 

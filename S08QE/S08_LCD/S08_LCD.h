@@ -1,28 +1,18 @@
 /*
- * moonbyte_s08_lcd_port.h
+ * S08_LCD.h
  *
- *  Created on: Sep 14, 2024
- *      Author: Bernardo Iñiguez
- *  
- *  Definición de funcionamiento del puerto LCD para MoonByte S08 
- *  
- *  Micro definido MC9S08QE128
- *  
- *  Definiciones de pines y puertos:
- *  	Puerto de Datos:
- *  		LCD D0..D7 = S08 PTBD0..PTBD7; Puede limitarse a 4 bits
- *  	Pin Enable:
- *  		LCD Enable = S08 PTAD1
- *  	Pin RS:
- *  		LCD RS = S08 PTAD0
+ *  Created on: Nov 30, 2024
+ *      Author: shado
  */
-#ifndef MOONBYTE_S08_LCD_PORT_H_
-#define MOONBYTE_S08_LCD_PORT_H_
+
+#ifndef S08_LCD_H_
+#define S08_LCD_H_
+
 
 #include <hidef.h>
 #include "derivative.h"
-#include "rtc_1k.h"
-#include "variable_defines.h"
+#include "../S08_RTC/S08_RTC.h"
+#include "../../S08_common/S08_variables.h"
 
 // Definición de pines LCD
 #define DATA_PORT PTBD 			// Asignación de puerto de datos D0..D7 a PTB0..PTB7
@@ -83,18 +73,9 @@ bool lcd_setComand(uint8_t comand);		// Mandar un comando a la pantalla
 bool lcd_setData(uint8_t data);			// Mandar un carácter a la pantalla
 uint8_t lcd_getCGRAM_dir(uint8_t caracter); 
 
-
 // Funciones complejas del LCD
 eLCD_arrayStates lcd_sendArray(uint8_t *dataArray);			// Mandar un array de carácteres a la pantalla
 bool lcd_setRow(uint8_t row, uint8_t offset);				// Posicionar cursor en coordenada específica
 eLCD_makeCaracter lcd_make_character(uint8_t caracter, uint8_t *pu8data);	// Mandar un array para crear un carácter especial
 
-/*
-void lcd_clear(void);
-void lcd_set_cgram_dir(uint8_t addr);
-*/
-// Funciones de comunicación con la pantalla
-//void lcd_send_data(uint8_t data); //Mandar un byte a la pantalla
-//void lcd_make_character(uint8_t character, uint8_t row, uint8_t data); //Crear un caracter especial
-
-#endif /* MOONBYTE_S08_LCD_PORT_H_ */
+#endif /* S08_LCD_H_ */
